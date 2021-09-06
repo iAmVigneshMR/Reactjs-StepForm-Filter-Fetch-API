@@ -3,6 +3,7 @@ import "./api.css"
 
 const Api = () => {
     const [apiData, setapiData] = useState([]);
+    const [searchTerm, setSearchTerm ] = useState("");
 
     useEffect(() => {
         let fetchData = fetch("https://jsonplaceholder.typicode.com/posts")
@@ -23,9 +24,27 @@ const Api = () => {
              <header className="App-header">
                <h2 className="display-1">Fetching API</h2>
              </header>
+             <hr className="hr" />
+            <input
+                type="search"
+                className="form-control my-2 vw-55"
+                placeholder="Search by Title"
+                value={searchTerm}
+                onChange={e => setSearchTerm(e.target.value)}
+            />
              <div className="user-container">
                {apiData && apiData.length > 0 ? 
-               apiData.map((val, i) => 
+               apiData.filter(
+                 search =>{
+                   if (searchTerm === "") {
+                     return search;
+                   }
+                   else if(search.title.toLowerCase().includes(searchTerm.toLowerCase())){
+                     return search;
+                   }
+                 }
+               )
+               .map((val, i) => 
                <div key = {val.id} className="info-item">
                  <h2>User Id : {val.id}</h2> <br />
                  <h3>Title : {val.title.slice(0,12)}</h3> <br />
