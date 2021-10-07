@@ -6,7 +6,7 @@ const NavBar = () => {
         <Fragment>
         <nav className="navbar navbar-expand-lg navbar-light bg-light border-bottom">
         <div className="container">
-        <a className="navbar-brand" href="#">Pipesort Technologies Task</a>
+        <a className="navbar-brand" href="#">Reactjs StepForm,Filter,Fetch API</a>
         <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
           <span className="navbar-toggler-icon" />
         </button>
@@ -16,13 +16,13 @@ const NavBar = () => {
               <Link className="nav-link" to="/">Home <span className="sr-only">(current)</span></Link>
             </li>
             <li className="nav-item">
-              <Link className="nav-link" to="/Stepform">Task1</Link>
+              <Link className="nav-link" to="/Stepform">StepForm</Link>
             </li>
             <li className="nav-item">
-              <Link className="nav-link" to="/filters">Task2</Link>
+              <Link className="nav-link" to="/filters">Filter</Link>
             </li>
             <li className="nav-item">
-              <Link className="nav-link" to="/api">Task3</Link>
+              <Link className="nav-link" to="/api">Fetch API</Link>
             </li>
           </ul>
         </div>
